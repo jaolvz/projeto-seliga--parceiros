@@ -1,0 +1,22 @@
+{% load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'cadastro/inicio.css' %}">
+    <title>Inicio</title>
+</head>
+<body>
+    <div class="img_logo"><img src="{% static 'comuns/logo.png'  %}" alt="">
+    </div>
+
+    <form action="">
+        <input type="email" name="Email" placeholder="Email">
+        <input type="password"  placeholder="Senha" name="senha" >
+        <input type="submit" placeholder="Senha" value="Login">
+    </form>
+    
+    <a href="{% url 'cadastro:cadastro' %}">Não possuo cadastro.</a>
+</body>
+</html>

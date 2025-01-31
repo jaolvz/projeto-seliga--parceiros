@@ -1,0 +1,34 @@
+
+{% load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'cadastro/cadastro.css' %}">
+    <title>Cadastro - Se liga</title>
+</head>
+<body>
+    <div class="img_logo"><img src="{% static 'comuns/logo.png'  %}" alt="">
+    </div>
+
+    <form action="{%url 'cadastro:cadastro' %}" method="POST" >
+        {% csrf_token %}
+        <input type="email" name="email" placeholder="Email">
+        <input type="text" placeholder="Nome Completo">
+        <input type="password" id="senha" placeholder="Senha" name="senha" required >
+        <div id="requisitos">
+            <ul>
+              <li id="requisito1">Pelo menos 8 caracteres</li>
+              <li id="requisito2">Pelo menos 1 letra maiúscula</li>
+              <li id="requisito3">Pelo menos 1 número</li>
+              <li id="requisito4">Pelo menos 1 caractere especial</li>
+            </ul>
+          </div>
+        <input required type="password" placeholder="Confirme sua senha" name="confirmar_senha">
+        <input type="submit"  value="Cadastrar">
+    </form>
+
+  <script src="{% static 'cadastro/cadastro.js' %}" ></script>
+</body>
+</html>
